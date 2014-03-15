@@ -29,6 +29,7 @@ router.post('/', function (request, response, next) {
     var course = new Course(item);
     course.save(function(error, resource) {
         if (error) {
+            console.log('Error: ' + error);
             response.send(500, {error: error});
         } else {
             console.log('Success: ' + JSON.stringify(resource));
@@ -51,9 +52,11 @@ router.get('/', function (request, response, next) {
     console.log('Retrieving all courses');
     Course.find({}, function(error, resource) {
         if (error) {
+            console.log('Error: ' + error);
             response.send(500, {error: error});
         }
         else {
+            console.log('Success: ' + JSON.stringify(resource));
             response.send(resource);
         }
 
@@ -76,12 +79,15 @@ router.get('/:courseId', function (request, response, next) {
 
     Course.findById(id, function(error, resource) {
         if (error) {
+            console.log('Error: ' + error);
             response.send(500, {error: error});
         }
         else if (resource) {
+            console.log('Success: ' + JSON.stringify(resource));
             response.send(resource);
         }
         else {
+            console.log('Not found: ' + id);
             response.send(404);
         }
     });
@@ -107,12 +113,15 @@ router.put('/:courseId', function (request, response, next) {
 
     Course.findByIdAndUpdate(id, item, function(error, resource) {
         if (error) {
+            console.log('Error: ' + error);
             response.send(500, {error: error});
         }
         else if (resource) {
+            console.log('Success: ' + JSON.stringify(resource));
             response.send(resource);
         }
         else {
+            console.log('Not found: ' + id);
             response.send(404);
         }
     });
@@ -134,14 +143,15 @@ router.delete('/:courseId', function (request, response, next) {
 
     Course.findByIdAndRemove(id, function (error, resource) {
         if (error) {
-            console.log('Error deleting course: ' + error);
+            console.log('Error: ' + error);
             response.send(500, {error: error});
         }
         else if (resource) {
-            console.log('document deleted');
+            console.log('Success: ' + id);
             response.send(resource);
         }
         else {
+            console.log('Not found: ' + id);
             response.send(404);
         }
     });
