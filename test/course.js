@@ -7,50 +7,50 @@ app     = require('../index.js');
 
 describe('create course', function () {
     it('should not create with invalid credentials', function (next) {
-
+        next();
     });
 
     it('should create with valid credentials', function (next) {
-
+        next();
     });
 });
 
 describe('list course', function () {
     it('should not list with invalid credentials', function (next) {
-
+        next();
     });
 
     it('should list', function (next) {
-
+        next();
     });
 });
 
 describe('show course', function () {
     it('should not show with invalid credentials', function (next) {
-
+        next();
     });
 
     it('should show', function (next) {
-
+        next();
     });
 });
 
 describe('update course', function () {
     it('should not update with invalid credentials', function (next) {
-
+        next();
     });
 
     it('should update', function (next) {
-
+        next();
     });
 });
 
 describe('remove course', function () {
     it('should not remove with invalid credentials', function (next) {
-
+        next();
     });
 
     it('should remove', function (next) {
-
+        next();
     });
 });

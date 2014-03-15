@@ -27,3 +27,5 @@ app.use('/catalogs', require('./controllers/catalog'));
 app.use('/catalogs/:catalogId/offerings', require('./controllers/catalog-offering'));
 
 app.listen(nconf.get('server-port'));
+
+module.exports = app;
