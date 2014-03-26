@@ -21,9 +21,10 @@ app = express();
 app.use(bodyParser());
 app.use('/courses', require('./controllers/course'));
 app.use('/disciplines', require('./controllers/discipline'));
-app.use('/disciplines/:disciplineId/offerings', require('./controllers/discipline-offering'));
 app.use('/discipline-blocks', require('./controllers/discipline-block'));
 app.use('/catalogs', require('./controllers/catalog'));
 app.use('/catalogs/:catalogId/offerings', require('./controllers/catalog-offering'));
 
 app.listen(nconf.get('server-port'));
+
+module.exports = app;
